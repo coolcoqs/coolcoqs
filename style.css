@@ -1,0 +1,243 @@
+/* General */
+
+:root {
+  --primary: #C72E24;
+  --background-primary: #E5CA6F;
+}
+
+* {
+  margin: 0;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+h1, h3, h4, h5, h6, .button .front, .header--content-link {
+  font-family: 'Press Start 2P', cursive;
+  color: var(--primary);
+  text-shadow: 0px 2px #000;
+}
+
+a, button, .button {
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 89px;
+  text-shadow: 0px 4px #000;
+  text-align: center;
+}
+
+h2 {
+  font-size: 32px;
+  text-shadow: 0px 3px #000;
+  text-align: center;
+  color: #fff;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 1.4;
+}
+
+p {
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+.highlight {
+  color: var(--primary);
+}
+
+/* Header */
+.header {
+  min-height: 100px;
+  padding: 26px 62px 26px 0;
+  border-bottom: 4px solid var(--primary);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.header--logo {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.header--content-link {
+  font-size: 12px;
+  position: relative;
+  text-shadow: 0px 1px #000;
+}
+
+.header--content-link--selected::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  height: 2px;
+  width: 100%;
+  right: 1px;
+  background-color: var(--primary);
+}
+
+.header--content-link:not(:last-of-type) {
+  margin-right: 40px;
+}
+
+/* Button */
+.button {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  margin: 0 auto;
+  display: inline-block;
+  color: #fff;
+}
+
+.button:hover {
+  filter: brightness(110%);
+}
+
+.button:hover .front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button:hover .shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.button .shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button .edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.button .front {
+  display: block;
+  position: relative;
+  padding: 16px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 700;
+  background: var(--primary);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+/* Content */
+.section {
+  background-color: var(--background-primary);
+  padding: 16px 0;
+}
+
+.section--inner {
+  max-width: 775px;
+  margin: 0 auto;
+}
+
+.section--hero {
+  background: url('assets/website-hero.png') bottom/cover no-repeat;
+  min-height: 80vh;
+  padding: 150px 32px 0;
+}
+
+.section--hero h2 {
+  max-width: 650px;
+  margin: 16px auto 0;
+}
+
+.callout {
+  position: relative;
+  background-color: #fff;
+  padding: 40px 26px;
+  box-sizing: border-box;
+}
+
+.callout::after {
+  content: '';
+  position: absolute;
+  background-color: #000;
+  height: 4px;
+  width: 100%;
+  top: 100%;
+  left: 0;
+}
+
+.callout--intro {
+  margin-bottom: 132px;
+}
+
+.callout--intro h3 {
+  margin-bottom: 60px;
+  padding-left: 240px;
+}
+
+.callout--intro::before {
+  content: '';
+  position: absolute;
+  background: url('assets/chicken_profile_frame.png') center/contain no-repeat;
+  height: 260px;
+  width: 260px;
+  left: -50px;
+  top: -110px;
+}
+
+/* Footer */
+footer {
+  padding: 42px 62px 42px 120px;
+  border-top: 4px solid var(--primary);
+  box-sizing: border-box;
+  color: var(--primary);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+}
