@@ -40,6 +40,17 @@ h3 {
   line-height: 1.4;
 }
 
+@media (max-width: 399px) {
+  h1 {
+    font-size: 68px;
+    line-height: 1.4;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+}
+
 p {
   margin-top: 16px;
   font-weight: 600;
@@ -200,6 +211,12 @@ p {
   background: url('assets/website-hero.png') bottom/cover no-repeat;
   min-height: 80vh;
   padding: 150px 32px 0;
+}
+
+@media (max-width: 399px) {
+  .section--hero {
+    padding: 10% 32px 0;
+  }
 }
 
 .section--hero h2 {
