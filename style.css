@@ -3,6 +3,7 @@
 :root {
   --primary: #C72E24;
   --background-primary: #E5CA6F;
+  --background-secondary: #7DC5D9;
 }
 
 * {
@@ -84,6 +85,12 @@ p {
 
 .header--content-link:not(:last-of-type) {
   margin-right: 40px;
+}
+
+@media (max-width: 399px) {
+  .header--content {
+    display: none;
+  }
 }
 
 /* Button */
@@ -180,6 +187,10 @@ p {
   padding: 16px 0;
 }
 
+.section:nth-child(odd) {
+  background-color: var(--background-secondary);
+}
+
 .section--inner {
   max-width: 775px;
   margin: 0 auto;
@@ -194,6 +205,10 @@ p {
 .section--hero h2 {
   max-width: 650px;
   margin: 16px auto 0;
+}
+
+.section--inner > h3 {
+  text-align: center;
 }
 
 .callout {
@@ -230,6 +245,14 @@ p {
   width: 260px;
   left: -50px;
   top: -110px;
+}
+
+.scroll-cards {
+  display: flex;
+}
+
+.scroll-cards img:not(:last-of-type) {
+  margin-right: 20px;
 }
 
 /* Footer */
